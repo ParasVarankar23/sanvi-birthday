@@ -93,4 +93,110 @@ body {
   box-shadow: 0 8px 40px rgba(236, 72, 153, 0.2);
   transform: translateY(-4px);
   transition: all 0.3s ease;
+}@import "tailwindcss";
+
+@theme {
+  --font-dancing: "Dancing Script", cursive;
+  --font-playfair: "Playfair Display", serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fce4ec, #f3e5f5, #ffffff);
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Animations */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.4;
+    transform: scale(.8);
+  }
+}
+
+@keyframes glow {
+
+  0%,
+  100% {
+    text-shadow:
+      0 0 10px rgba(236, 72, 153, .3),
+      0 0 20px rgba(236, 72, 153, .2);
+  }
+
+  50% {
+    text-shadow:
+      0 0 30px rgba(236, 72, 153, .7),
+      0 0 50px rgba(236, 72, 153, .5);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Glass Effects */
+.glass {
+  background: rgba(255, 255, 255, .15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, .25);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, .25);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, .3);
+  box-shadow:
+    0 8px 32px rgba(236, 72, 153, .15),
+    inset 0 1px 1px rgba(255, 255, 255, .4);
+  transition: all .4s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 12px 40px rgba(236, 72, 153, .25),
+    inset 0 1px 1px rgba(255, 255, 255, .5);
 }
