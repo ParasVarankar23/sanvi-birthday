@@ -1,72 +1,96 @@
 @import "tailwindcss";
 
-html {
-  scroll-behavior: smooth;
+@theme {
+  --font-dancing: 'Dancing Script', cursive;
+  --font-playfair: 'Playfair Display', serif;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
 body {
-  background: linear-gradient(to bottom,
-      #ffe4ec,
-      #ffc0cb,
-      #ffb6c1);
-  overflow-x: hidden;
-  color: #4b5563;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #fce4ec, #f3e5f5, #ffffff);
 }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  display: none;
 }
 
-::-webkit-scrollbar-track {
-  background: #ffe4ec;
-}
+@keyframes float {
 
-::-webkit-scrollbar-thumb {
-  background: #ff69b4;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #ec4899;
-}
-
-/* Selection Color */
-::selection {
-  background: #ec4899;
-  color: white;
-}
-
-/* Floating Animation */
-@keyframes floating {
-  0% {
-    transform: translateY(0px);
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
   }
 
   50% {
-    transform: translateY(-12px);
+    transform: translateY(-20px) rotate(5deg);
   }
+}
 
+@keyframes twinkle {
+
+  0%,
   100% {
-    transform: translateY(0px);
-  }
-}
-
-.floating {
-  animation: floating 3s ease-in-out infinite;
-}
-
-/* Fade In */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
     opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.3;
+    transform: scale(0.8);
   }
 }
 
-.fade-in {
-  animation: fadeIn 1s ease-in-out;
+@keyframes glow {
+
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(236, 72, 153, 0.3);
+  }
+
+  50% {
+    text-shadow: 0 0 30px rgba(236, 72, 153, 0.6);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(236, 72, 153, 0.1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 40px rgba(236, 72, 153, 0.2);
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
 }
