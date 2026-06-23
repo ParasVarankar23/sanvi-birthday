@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 export default function CountdownScreen() {
-    const targetDate = new Date("2026-06-25T00:00:00").getTime();
+    const targetDate = new Date("2026-11-29T00:00:00").getTime();
 
     const calculateTimeLeft = () => {
         const now = new Date().getTime();
@@ -114,7 +114,7 @@ export default function CountdownScreen() {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                 >
-                    Countdown to 25 June 2026 ⏳
+                    Countdown to 25 November 2026 ⏳
                 </motion.h1>
 
                 <motion.p

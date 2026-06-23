@@ -55,7 +55,7 @@ export default function FinalScreen() {
                     animate={{ opacity: [0.8, 1, 0.8] }}
                     transition={{ duration: 2, repeat: Infinity }}
                 >
-                    Happy Birthday Sanvi ❤️
+                    Happy Birthday Olivia ❤️
                 </motion.h1>
 
                 <motion.div

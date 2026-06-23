@@ -125,7 +125,7 @@ export default function HeroScreen() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
                 >
-                    Happy Birthday Sanvi ❤️
+                    Happy Birthday Olivia❤️
                 </motion.h1>
 
                 {/* Date */}
@@ -135,7 +135,7 @@ export default function HeroScreen() {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.6 }}
                 >
-                    ✨ 25 June 2009 • Forever Special ✨
+                    ✨ 25 November 2000 • Forever Special ✨
                 </motion.p>
 
                 {/* Quote */}

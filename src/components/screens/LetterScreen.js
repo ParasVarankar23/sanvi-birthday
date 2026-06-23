@@ -119,7 +119,7 @@ export default function LetterScreen() {
                         <div className="text-5xl mb-3">💌</div>
 
                         <h1 className="font-dancing text-5xl text-pink-600 font-bold">
-                            Dear Sanvi ❤️
+                            Dear Olivia ❤️
                         </h1>
 
                         <div className="w-40 h-1 bg-pink-300 rounded-full mx-auto mt-4 mb-8"></div>

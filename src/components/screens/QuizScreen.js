@@ -1,22 +1,22 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const questions = [
     {
-        q: "What's Sanvi's favorite color?",
+        q: "What's Olivia's favorite color?",
         a: "Pink 💖",
         emoji: "🎀",
     },
     {
-        q: "What does Sanvi love most?",
+        q: "What does Olivia love most?",
         a: "Ice Cream 🍦",
         emoji: "🍨",
     },
     {
-        q: "Who is Sanvi's best friend?",
-        a: "Manu ❤️",
+        q: "Who is Olivia's best friend?",
+        a: "Nicky ❤️",
         emoji: "💕",
     },
 ];
@@ -190,8 +190,8 @@ export default function QuizScreen() {
                         <motion.div
                             key={index}
                             className={`rounded-full transition-all ${index === currentIndex
-                                    ? "w-10 h-3 bg-pink-500"
-                                    : "w-3 h-3 bg-pink-200"
+                                ? "w-10 h-3 bg-pink-500"
+                                : "w-3 h-3 bg-pink-200"
                                 }`}
                             animate={{
                                 scale: index === currentIndex ? 1.2 : 1,
