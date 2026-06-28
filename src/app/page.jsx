@@ -1,23 +1,23 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { AnimatePresence } from 'framer-motion';
-import LoadingScreen from '@/components/screens/LoadingScreen';
-import WelcomeScreen from '@/components/screens/WelcomeScreen';
-import HeroScreen from '@/components/screens/HeroScreen';
-import CountdownScreen from '@/components/screens/CountdownScreen';
-import PhotoStoryScreen from '@/components/screens/PhotoStoryScreen';
 import CakeScreen from '@/components/screens/CakeScreen';
-import MemoryTimelineScreen from '@/components/screens/MemoryTimelineScreen';
-import LetterScreen from '@/components/screens/LetterScreen';
-import SpecialSectionScreen from '@/components/screens/SpecialSectionScreen';
-import GalleryCarouselScreen from '@/components/screens/GalleryCarouselScreen';
-import QuizScreen from '@/components/screens/QuizScreen';
-import GiftBoxScreen from '@/components/screens/GiftBoxScreen';
+import CountdownScreen from '@/components/screens/CountdownScreen';
 import FinalScreen from '@/components/screens/FinalScreen';
+import GalleryCarouselScreen from '@/components/screens/GalleryCarouselScreen';
+import GiftBoxScreen from '@/components/screens/GiftBoxScreen';
+import HeroScreen from '@/components/screens/HeroScreen';
+import LetterScreen from '@/components/screens/LetterScreen';
+import LoadingScreen from '@/components/screens/LoadingScreen';
+import MemoryTimelineScreen from '@/components/screens/MemoryTimelineScreen';
+import PhotoStoryScreen from '@/components/screens/PhotoStoryScreen';
+import QuizScreen from '@/components/screens/QuizScreen';
+import SpecialSectionScreen from '@/components/screens/SpecialSectionScreen';
+import WelcomeScreen from '@/components/screens/WelcomeScreen';
 import BackgroundMusic from '@/components/ui/BackgroundMusic';
 import FloatingFlowers from '@/components/ui/FloatingFlowers';
 import Sparkles from '@/components/ui/Sparkles';
+import { AnimatePresence } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 
 const SCREENS = [
   { id: 'loading', component: LoadingScreen, duration: 3000 },
@@ -37,18 +37,21 @@ const SCREENS = [
 
 export default function Home() {
   const [currentScreenIndex, setCurrentScreenIndex] = useState(0);
-  const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+  const musicRef = useRef(null);
+  const hasStartedMusic = useRef(false);
+
+  const handleReadAgain = () => {
+    hasStartedMusic.current = false;
+    musicRef.current?.resetMusic?.();
+    setCurrentScreenIndex(0);
+  };
 
   useEffect(() => {
-    // Attempt to autoplay music
-    const audio = document.querySelector('audio');
-    if (audio) {
-      audio.play().catch(() => {
-        // Autoplay was prevented, user will need to interact
-        console.log('Autoplay prevented');
-      });
+    if (currentScreenIndex === 1 && !hasStartedMusic.current) {
+      hasStartedMusic.current = true;
+      musicRef.current?.startMusic?.();
     }
-  }, []);
+  }, [currentScreenIndex]);
 
   useEffect(() => {
     const currentScreen = SCREENS[currentScreenIndex];
@@ -64,15 +67,19 @@ export default function Home() {
   }, [currentScreenIndex]);
 
   const CurrentScreen = SCREENS[currentScreenIndex].component;
+  const currentScreenId = SCREENS[currentScreenIndex].id;
 
   return (
     <main className="relative h-screen w-screen overflow-hidden">
-      <BackgroundMusic />
+      <BackgroundMusic ref={musicRef} />
       <FloatingFlowers />
       <Sparkles />
 
       <AnimatePresence mode="wait">
-        <CurrentScreen key={currentScreenIndex} />
+        <CurrentScreen
+          key={currentScreenIndex}
+          onReadAgain={currentScreenId === 'final' ? handleReadAgain : undefined}
+        />
       </AnimatePresence>
     </main>
   );

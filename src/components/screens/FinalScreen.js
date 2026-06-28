@@ -1,11 +1,12 @@
 'use client';
+/* eslint-disable react/prop-types */
 
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import Confetti from 'react-confetti';
 import FloatingHearts from '../ui/FloatingHearts';
 
-export default function FinalScreen() {
+export default function FinalScreen({ onReadAgain }) {
     const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
 
     useEffect(() => {
@@ -26,7 +27,7 @@ export default function FinalScreen() {
     }, []);
 
     return (
-        <div className="fixed inset-0 flex items-center justify-center bg-gradient-to-br from-pink-50 via-white to-purple-50">
+        <div className="fixed inset-0 flex items-center justify-center bg-linear-to-br from-pink-50 via-white to-purple-50">
             <Confetti
                 width={windowSize.width}
                 height={windowSize.height}
@@ -55,7 +56,7 @@ export default function FinalScreen() {
                     animate={{ opacity: [0.8, 1, 0.8] }}
                     transition={{ duration: 2, repeat: Infinity }}
                 >
-                    Happy Birthday Olivia ❤️
+                    Happy Birthday Kavya ❤️
                 </motion.h1>
 
                 <motion.div
@@ -85,6 +86,42 @@ export default function FinalScreen() {
                 >
                     {['💖', '✨', '🌸', '💕', '🌟', '🌺']}
                 </motion.div>
+
+                <motion.button
+                    type="button"
+                    onClick={onReadAgain}
+                    className="
+        inline-flex 
+        items-center 
+        justify-center 
+        rounded-full 
+        bg-pink-500 
+        px-6 sm:px-8 md:px-10 
+        py-3 sm:py-3.5 md:py-4 
+        text-sm sm:text-base md:text-lg 
+        font-semibold 
+        text-white 
+        shadow-lg shadow-pink-200 
+        transition-all 
+        hover:bg-pink-600 
+        hover:shadow-xl 
+        hover:shadow-pink-300
+        active:scale-95
+        min-w-[140px] sm:min-w-[160px] md:min-w-[180px]
+        min-h-[48px] sm:min-h-[54px] md:min-h-[60px]
+        w-auto
+        cursor-pointer
+        select-none
+        focus:outline-none
+        focus:ring-2
+        focus:ring-pink-400
+        focus:ring-offset-2
+    "
+                    whileHover={{ scale: 1.04 }}
+                    whileTap={{ scale: 0.98 }}
+                >
+                    Read Again
+                </motion.button>
             </motion.div>
         </div>
     );

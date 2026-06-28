@@ -107,7 +107,7 @@ export default function WelcomeScreen() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
                 >
-                    Hello Olivia 👋
+                    Hello Kavya 👋
                 </motion.h1>
 
                 {/* Divider */}

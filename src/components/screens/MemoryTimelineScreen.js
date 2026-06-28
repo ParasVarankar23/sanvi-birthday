@@ -3,10 +3,10 @@
 import { motion } from "framer-motion";
 
 const memories = [
-    { year: "2009", text: "Born 🎂", emoji: "👶" },
-    { year: "2014", text: "Beautiful Childhood", emoji: "🧒" },
-    { year: "2018", text: "School Memories", emoji: "📚" },
-    { year: "2022", text: "Special Moments", emoji: "💫" },
+    { year: "2000", text: "Born 🎂", emoji: "👶" },
+    { year: "2005", text: "Beautiful Childhood", emoji: "🧒" },
+    { year: "2016", text: "School Memories", emoji: "📚" },
+    { year: "2021", text: "Special Moments", emoji: "💫" },
     { year: "2026", text: "Happy Birthday ❤️", emoji: "🎉" },
 ];
 

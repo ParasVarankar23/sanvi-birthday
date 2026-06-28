@@ -130,7 +130,7 @@ export default function HeroScreen() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
                 >
-                    Happy Birthday Olivia❤️
+                    Happy Birthday Kavya❤️
                 </motion.h1>
 
                 {/* Date */}

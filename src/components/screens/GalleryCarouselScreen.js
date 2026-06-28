@@ -13,19 +13,19 @@ import "swiper/css/effect-fade";
 
 const galleryImages = [
     {
-        image: "/images/pic1.avif",
+        image: "/images/photo1.jpeg",
         text: "Beautiful Moments ❤️",
     },
     {
-        image: "/images/pic2.avif",
+        image: "/images/photo2.jpeg",
         text: "Forever Together 💕",
     },
     {
-        image: "/images/pic3.jpeg",
+        image: "/images/photo3.jpeg",
         text: "Shining Bright ✨",
     },
     {
-        image: "/images/pic4.jpeg",
+        image: "/images/photo4.jpeg",
         text: "Special Times 🌸",
     },
 ];
@@ -133,21 +133,27 @@ export default function GalleryCarouselScreen() {
                                         rounded-[25px] sm:rounded-[30px] md:rounded-[40px]
                                         overflow-hidden
                                         shadow-[0_20px_80px_rgba(236,72,153,0.25)]
+                                        bg-pink-50
                                     "
                                     whileHover={{
                                         scale: 1.02,
                                     }}
                                 >
+                                    {/* Image with object-contain to show full image */}
                                     <Image
                                         src={image.image}
                                         alt={image.text}
                                         fill
                                         priority
-                                        className="object-cover"
+                                        className="object-contain"
+                                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, 80vw"
                                     />
 
-                                    {/* Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                                    {/* Subtle background blur for empty spaces */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-pink-200/30 via-transparent to-purple-200/30" />
+
+                                    {/* Gradient Overlay at bottom */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
 
                                     {/* Caption */}
                                     <motion.div

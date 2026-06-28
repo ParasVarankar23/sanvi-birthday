@@ -5,18 +5,18 @@ import { useEffect, useState } from "react";
 
 const questions = [
     {
-        q: "What's Olivia's favorite color?",
+        q: "What's Kavya's favorite color?",
         a: "Pink 💖",
         emoji: "🎀",
     },
     {
-        q: "What does Olivia love most?",
+        q: "What does Kavya love most?",
         a: "Ice Cream 🍦",
         emoji: "🍨",
     },
     {
-        q: "Who is Olivia's best friend?",
-        a: "Nicky ❤️",
+        q: "Who is Kavya's best friend?",
+        a: "Priya ❤️",
         emoji: "💕",
     },
 ];
