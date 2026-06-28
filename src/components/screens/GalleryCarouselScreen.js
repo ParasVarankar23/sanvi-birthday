@@ -13,19 +13,19 @@ import "swiper/css/effect-fade";
 
 const galleryImages = [
     {
-        image: "/images/photo1.jpeg",
+        image: "/images/girl1.jpg",
         text: "Beautiful Moments ❤️",
     },
     {
-        image: "/images/photo2.jpeg",
+        image: "/images/girl2.jpg",
         text: "Forever Together 💕",
     },
     {
-        image: "/images/photo3.jpeg",
+        image: "/images/girl3.jpg",
         text: "Shining Bright ✨",
     },
     {
-        image: "/images/photo4.jpeg",
+        image: "/images/girl4.jpg",
         text: "Special Times 🌸",
     },
 ];

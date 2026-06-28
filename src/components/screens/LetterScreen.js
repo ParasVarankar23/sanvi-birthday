@@ -77,14 +77,14 @@ export default function LetterScreen() {
                 initial={{ scale: 0.8 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.8 }}
-                className="relative w-full max-w-[95%] sm:max-w-[90%] md:max-w-2xl h-[500px] sm:h-[550px] md:h-[650px] mx-auto"
+                className="relative w-full max-w-[95%] sm:max-w-[90%] md:max-w-2xl h-[450px] sm:h-[500px] md:h-[600px] mx-auto"
             >
                 {/* Envelope Bottom */}
-                <div className="absolute bottom-0 w-full h-[180px] sm:h-[200px] md:h-[250px] bg-pink-300 rounded-[25px] sm:rounded-[30px] md:rounded-[40px] shadow-2xl" />
+                <div className="absolute bottom-0 w-full h-[160px] sm:h-[180px] md:h-[220px] bg-pink-300 rounded-[25px] sm:rounded-[30px] md:rounded-[40px] shadow-2xl" />
 
                 {/* Heart Seal */}
                 <motion.div
-                    className="absolute left-1/2 bottom-[130px] sm:bottom-[150px] md:bottom-[190px] -translate-x-1/2 text-4xl sm:text-5xl md:text-6xl z-20"
+                    className="absolute left-1/2 bottom-[115px] sm:bottom-[135px] md:bottom-[170px] -translate-x-1/2 text-4xl sm:text-5xl md:text-6xl z-20"
                     animate={{
                         scale: [1, 1.15, 1],
                     }}
@@ -106,37 +106,37 @@ export default function LetterScreen() {
                     className="
                         absolute left-1/2 -translate-x-1/2
                         w-[92%] sm:w-[95%] md:w-[600px]
-                        h-[420px] sm:h-[450px] md:h-[500px]
+                        h-[380px] sm:h-[410px] md:h-[460px]
                         bg-[#fffaf5]
                         rounded-[25px] sm:rounded-[30px] md:rounded-[35px]
                         border-[4px] sm:border-[6px] md:border-[8px]
                         border-pink-100
                         shadow-[0_20px_80px_rgba(0,0,0,.15)]
-                        px-6 sm:px-8 md:px-12
-                        py-6 sm:py-8 md:py-10
+                        px-6 sm:px-8 md:px-10
+                        py-5 sm:py-6 md:py-8
                         overflow-y-auto
                     "
                 >
                     {/* Header */}
                     <div className="text-center">
-                        <div className="text-3xl sm:text-4xl md:text-5xl mb-2 sm:mb-3 md:mb-3">
+                        <div className="text-2xl sm:text-3xl md:text-4xl mb-1 sm:mb-2 md:mb-2">
                             💌
                         </div>
 
-                        <h1 className="font-dancing text-3xl sm:text-4xl md:text-5xl text-pink-600 font-bold">
+                        <h1 className="font-dancing text-2xl sm:text-3xl md:text-4xl text-pink-600 font-bold">
                             Dear Olivia ❤️
                         </h1>
 
-                        <div className="w-24 sm:w-32 md:w-40 h-0.5 sm:h-1 bg-pink-300 rounded-full mx-auto mt-3 sm:mt-4 md:mt-4 mb-4 sm:mb-6 md:mb-8" />
+                        <div className="w-20 sm:w-28 md:w-32 h-0.5 sm:h-1 bg-pink-300 rounded-full mx-auto mt-2 sm:mt-3 md:mt-3 mb-3 sm:mb-4 md:mb-5" />
                     </div>
 
-                    {/* Letter Text */}
-                    <p className="font-dancing text-xl sm:text-2xl md:text-3xl text-pink-500 leading-[40px] sm:leading-[48px] md:leading-[58px] whitespace-pre-wrap">
+                    {/* Letter Text - Reduced line height */}
+                    <p className="font-dancing text-lg sm:text-xl md:text-2xl text-pink-500 leading-[28px] sm:leading-[32px] md:leading-[40px] whitespace-pre-wrap">
                         {displayText}
 
                         {!isComplete && (
                             <motion.span
-                                className="inline-block w-[2px] sm:w-[3px] h-6 sm:h-7 md:h-8 bg-pink-500 ml-1"
+                                className="inline-block w-[2px] sm:w-[3px] h-5 sm:h-6 md:h-7 bg-pink-500 ml-1"
                                 animate={{
                                     opacity: [0, 1],
                                 }}
@@ -151,20 +151,20 @@ export default function LetterScreen() {
                     {/* Signature */}
                     {isComplete && (
                         <motion.div
-                            className="mt-8 sm:mt-10 md:mt-14 text-right"
+                            className="mt-6 sm:mt-8 md:mt-10 text-right"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                         >
-                            <p className="font-dancing text-2xl sm:text-3xl md:text-4xl text-pink-400">
+                            <p className="font-dancing text-xl sm:text-2xl md:text-3xl text-pink-400">
                                 With Love,
                             </p>
 
-                            <h2 className="font-dancing text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+                            <h2 className="font-dancing text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
                                 Paras ❤️
                             </h2>
 
                             <motion.div
-                                className="text-3xl sm:text-4xl md:text-4xl mt-2 sm:mt-3 md:mt-4"
+                                className="text-2xl sm:text-3xl md:text-4xl mt-1 sm:mt-2 md:mt-3"
                                 animate={{
                                     scale: [1, 1.2, 1],
                                 }}

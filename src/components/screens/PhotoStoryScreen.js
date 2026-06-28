@@ -7,22 +7,22 @@ import Image from "next/image";
 const photos = [
     {
         id: 1,
-        image: "/images/photo1.jpeg",
+        image: "/images/girl1.jpg",
         caption: "Our endless laughter ❤️",
     },
     {
         id: 2,
-        image: "/images/photo2.jpeg",
+        image: "/images/girl2.jpg",
         caption: "Crazy memories ✨",
     },
     {
         id: 3,
-        image: "/images/photo3.jpeg",
+        image: "/images/girl3.jpg",
         caption: "Beautiful moments 🌸",
     },
     {
         id: 4,
-        image: "/images/photo4.jpeg",
+        image: "/images/girl4.jpg",
         caption: "Forever Special 💖",
     },
 ];
